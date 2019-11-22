@@ -49,7 +49,7 @@ public class GenTableServiceImpl implements IGenTableService
      */
     @Override
     public List<GenTable> selectDbTableList(GenTable genTable) {
-        return null;
+        return genTableMapper.selectDbTableList(genTable);
     }
 
     /**

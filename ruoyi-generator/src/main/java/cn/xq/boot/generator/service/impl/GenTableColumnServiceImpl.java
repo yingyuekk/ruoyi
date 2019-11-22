@@ -1,7 +1,10 @@
 package cn.xq.boot.generator.service.impl;
 
 import cn.xq.boot.generator.domain.GenTableColumn;
+import cn.xq.boot.generator.mapper.GenTableColumnMapper;
 import cn.xq.boot.generator.service.IGenTableColumnService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,8 +14,12 @@ import java.util.List;
  * @author xieqiong
  * @date 2019/11/20
  */
+@Service
 public class GenTableColumnServiceImpl implements IGenTableColumnService
 {
+    @Autowired
+    private GenTableColumnMapper genTableColumnMapper;
+
     /**
      * 查询业务字段列表
      *
@@ -21,7 +28,7 @@ public class GenTableColumnServiceImpl implements IGenTableColumnService
      */
     @Override
     public List<GenTableColumn> selectGenTableColumnListByTableId(GenTableColumn genTableColumn) {
-        return null;
+        return genTableColumnMapper.selectGenTableColumnListByTableId(genTableColumn);
     }
 
     /**
